@@ -22,7 +22,6 @@ class App extends Component {
       <ConnectedRouter history={history}>
         <>
           <Layout style={{height: "100%"}}>
-            <Sider/>
             <div className="app">
               <Switch>
                 <Redirect exact from="/" to="/native-list"/>

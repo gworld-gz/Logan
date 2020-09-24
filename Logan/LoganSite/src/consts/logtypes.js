@@ -3,17 +3,47 @@
 export const nativeLogTypeConfigs = [
   {
     logType: 1,
-    logTypeName: "exception catch 日志",
-    displayColor: "#32CD32"
+    logTypeName: "异常日志",
+    displayColor: "#e5352b"
   },
   {
     logType: 2,
-    logTypeName: "custom 代码日志",
-    displayColor: "#2f54eb"
+    logTypeName: "行为日志",
+    displayColor: "#0081b4"
   },
   {
     logType: 3,
-    logTypeName: "network日志",
+    logTypeName: "网络日志",
+    displayColor: "#85b7e2"
+  },
+  {
+    logType: 4,
+    logTypeName: "缓存日志",
+    displayColor: "#dde2e0"
+  },
+  {
+    logType: 5,
+    logTypeName: "事件日志",
+    displayColor: "#29245c"
+  },
+  {
+    logType: 6,
+    logTypeName: "内存日志",
+    displayColor: "#5c3317"
+  },
+  {
+    logType: 7,
+    logTypeName: "WebView日志",
+    displayColor: "#f47b7b"
+  },
+  {
+    logType: 8,
+    logTypeName: "UniApp日志",
+    displayColor: "#9f1f5c"
+  },
+  {
+    logType: 100,
+    logTypeName: "业务日志",
     displayColor: "#5c3317"
   },
   {

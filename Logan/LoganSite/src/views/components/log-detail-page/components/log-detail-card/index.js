@@ -29,7 +29,7 @@ class LogDetailCard extends Component {
           </div>
           {logDetail && <div className="log-content">
             日志信息:<br />
-            { logDetail["content"] }
+            {logDetail["content"]}
           </div>}
         </Card>
       );
