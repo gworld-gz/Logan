@@ -80,12 +80,15 @@ public class LoganLogDetailServiceImpl extends AbstractBatchInsertService<LoganL
                          BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
                         String str;
                         while ((str = bufferedReader.readLine()) != null) {
+                            System.out.println(str);
                             saveLogDetail(JSON.parseObject(str, LoganLogItem.class).transferToDetail(task.getId()));
                         }
                         Thread.sleep(50);
                         task.setStatus(TaskStatusEnum.ANALYZED.getStatus());
                         analyzed(task);
+                        System.out.println("解析成功！");
                     } catch (Exception e) {
+                        e.printStackTrace();
                         LOGGER.error(e);
                     } finally {
                         keyLocks.remove(key);

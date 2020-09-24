@@ -5,6 +5,7 @@ import com.meituan.logan.web.parser.LoganProtocol;
 import com.meituan.logan.web.service.LoganLogFileService;
 import com.meituan.logan.web.util.FileUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class LoganLogFileServiceDefaultImpl implements LoganLogFileService {
 
     @Override
     public ResultEnum write(InputStream inputStream, String fileName) {
-        if (inputStream == null|| StringUtils.isEmpty(fileName)) {
+        if (inputStream == null || StringUtils.isEmpty(fileName)) {
             return ResultEnum.ERROR_PARAM;
         }
         try {
@@ -28,6 +29,7 @@ public class LoganLogFileServiceDefaultImpl implements LoganLogFileService {
             }
             return new LoganProtocol(inputStream, file).process();
         } catch (Exception e) {
+            System.out.println(ExceptionUtils.getStackTrace(e));
             LOGGER.error(e);
         }
         return ResultEnum.EXCEPTION;
